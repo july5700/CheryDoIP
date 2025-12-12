@@ -1,0 +1,34 @@
+# exe
+Main*.exe
+MainWindow.build/
+MainWindow.dist/
+MainWindow.onefile-build/
+output/
+nuitka-crash-report.xml
+
+# report
+result/
+allure-results/
+
+# config file
+*.toml
+
+# pyinstaller related file
+dist/
+*.spec
+build/
+
+# Testfile
+try*.py
+
+
+# pycharm related file
+idea/
+__pycache__/
+
+# venv related file
+venv/
+
+# other
+reference/
+Notes*.txt

@@ -1,0 +1,1 @@
+python -m pytest --alluredir=./allure-results
