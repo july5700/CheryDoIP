@@ -1,1 +1,0 @@
-python -m pytest -vs -s -q --alluredir=./result

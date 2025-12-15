@@ -4,6 +4,15 @@ from function import DoIPClientForTest, DataHandle
 
 
 class TestApplicationService:
+    def test_example_1(self):
+        assert 1 == 1
+
+    def test_example_2(self):
+        assert 1 == 1
+
+    def test_example_3(self):
+        assert 3 == 3
+
     @pytest.mark.parametrize("msg, expected_response", [
         ("1001", "5001"),
         ("1003", "5003")])

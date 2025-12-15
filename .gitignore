@@ -9,6 +9,8 @@ nuitka-crash-report.xml
 # report
 result/
 allure-results/
+allure-report/
+
 
 # config file
 *.toml
@@ -23,7 +25,7 @@ try*.py
 
 
 # pycharm related file
-idea/
+.idea/
 __pycache__/
 
 # venv related file
@@ -32,3 +34,6 @@ venv/
 # other
 reference/
 Notes*.txt
+
+# backupfile
+CheryDoIP*.7z
