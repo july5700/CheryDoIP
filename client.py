@@ -201,6 +201,7 @@ class DoIPClient:
                 )
             else:
                 logger2.debug(f"Receive activate response code:{hex(result.response_code)}: Success!")
+                # logger2.debug(f"result = {result}")
 
     class TransportType(IntEnum):
         TRANSPORT_UDP = 1
@@ -403,6 +404,7 @@ class DoIPClient:
         while (time.time() - start_time) <= timeout:
             if transport == DoIPClient.TransportType.TRANSPORT_TCP:
                 response = self._tcp_parser.read_message(data)
+                # logger.debug(f"response = {response}")
             else:
                 response = self._udp_parser.read_message(data)
             data = bytearray()
@@ -414,8 +416,18 @@ class DoIPClient:
                 logger.warning("Responding to an alive check")
                 self.send_doip_message(AliveCheckResponse(self._client_logical_address))
             elif response:
+
                 # We got a response that might actually be interesting to the caller,
                 # so return it.
+                # if response.user_data:
+                #     logger2.debug(f"response.user_data = {response.user_data}")
+                # else:
+                #     logger2.debug(f"response = {response}")
+                if response.payload_type == 32769:
+                    logger2.debug(f"response user data = {response.user_data.hex().upper()}")
+                else:
+                    logger2.debug(f"response = {response}")
+                    logger2.debug(f"response payload_type = {response.payload_type}")
                 return response
             else:
                 # There were no responses in the parser, so we need to read off the network
@@ -503,6 +515,7 @@ class DoIPClient:
         retry = self._auto_reconnect_tcp and not disable_retry
 
         data_bytes = self._pack_doip(self._protocol_version, payload_type, payload_data)
+        logger2.debug(f"data_bytes = {data_bytes.hex()}")
         logger.debug(
             "Sending DoIP Message: Type: 0x{:X}, Payload Size: {}, Payload: {}".format(
                 payload_type,
@@ -573,6 +586,8 @@ class DoIPClient:
         """
         payload_type = payload_message_to_type[type(doip_message)]
         payload_data = doip_message.pack()
+        # logger2.debug(f"payload_data = {payload_data.hex()}")
+        # logger2.debug(f"payload_type = {payload_type}")
         self.send_doip(
             payload_type, payload_data, transport=transport, disable_retry=disable_retry
         )
@@ -597,12 +612,16 @@ class DoIPClient:
         message = RoutingActivationRequest(
             self._client_logical_address, activation_type, vm_specific=vm_specific
         )
+        # logger2.debug(f"Activate message = {message}")
         self.send_doip_message(message, disable_retry=disable_retry)
         while True:
             result = self.read_doip()
+            # logger2.debug(f"Activate result = {message}")
             if type(result) == RoutingActivationResponse:
+                logger2.debug(f"result = {result}")
                 return result
             elif result:
+                logger2.debug(f"result = {result}")
                 logger.warning(
                     "Received unexpected DoIP message type {}. Ignoring".format(
                         type(result)

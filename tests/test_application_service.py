@@ -1,17 +1,12 @@
 import pytest
+import allure
 from loguru import logger
 from function import DoIPClientForTest, DataHandle
 
 
+@allure.epic("Chery-DoIP")
+@allure.feature("Application Service")
 class TestApplicationService:
-    def test_example_1(self):
-        assert 1 == 1
-
-    def test_example_2(self):
-        assert 1 == 1
-
-    def test_example_3(self):
-        assert 3 == 3
 
     @pytest.mark.parametrize("msg, expected_response", [
         ("1001", "5001"),
@@ -62,7 +57,6 @@ class TestApplicationService:
     def test_tester_present(self, doip_client):
         res = DoIPClientForTest(doip_client).basic_send_receive('3e00')
         assert res[:4] == '7e00'
-
 
     def test_read_dtc_information(self, doip_client):
         # DoIPClientForTest(doip_client).basic_send_receive('1003')

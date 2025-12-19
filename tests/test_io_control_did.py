@@ -1,8 +1,11 @@
 import pytest
+import allure
 from loguru import logger
 from function import DoIPClientForTest, DataHandle
 
 
+@allure.epic("Chery-DoIP")
+@allure.feature("IO Control DID")
 class TestSystemDID:
 
     @pytest.mark.parametrize("msg, expected_response", [
@@ -15,11 +18,10 @@ class TestSystemDID:
         ("2f571f01", "6f571f"),
         ("2f571f02", "6f571f"),
     ])
-    def test_control_dtc_setting(self, doip_client, msg, expected_response):
+    def test_io_control_did(self, doip_client, msg, expected_response):
         res = DoIPClientForTest(doip_client).basic_send_receive(msg)
         logger.info(f"doip_client object: {doip_client}")
-        assert res[:6] == expected_response
-
+        assert res[:6].upper() == expected_response.upper()
 
 
 if __name__ == "__main__":

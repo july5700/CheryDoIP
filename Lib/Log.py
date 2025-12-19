@@ -117,7 +117,7 @@ class Log(object):
 
 
 if __name__ == "__main__":
-    l = Log(1,log_level='CRITICAL')
+    l = Log(3,log_level='DEBUG')
     # l.debug_mode=3
     b = l.create_log_sample()
     folder = l.log_folder
@@ -136,3 +136,6 @@ if __name__ == "__main__":
     b.warning("This is a warning message")
     b.error("This is an error message")
     b.critical("This is a critical message")
+    b.critical("This is a critical message1")
+    b.critical("This is a critical message2")
+    b.error("This is an error message")

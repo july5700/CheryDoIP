@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1122</width>
-    <height>880</height>
+    <width>1037</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,124 +16,19 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>-10</x>
+     <x>10</x>
      <y>10</y>
-     <width>1131</width>
-     <height>641</height>
+     <width>1021</width>
+     <height>491</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>6</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
      <string>Mannual</string>
     </attribute>
-    <widget class="QTextEdit" name="textEdit_free_input">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>260</y>
-       <width>331</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_send">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>260</y>
-       <width>75</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Send</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_clear_log">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>260</y>
-       <width>75</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>ClearLog</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>310</y>
-       <width>331</width>
-       <height>23</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_functional">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>320</y>
-       <width>98</width>
-       <height>19</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>功能寻址</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_physical">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>320</y>
-       <width>98</width>
-       <height>19</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>物理寻址</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox_routine_activate_type">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>310</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>290</y>
-       <width>71</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>路由激活</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="tab_9">
     <attribute name="title">
@@ -512,7 +407,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>290</y>
+       <y>220</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -524,8 +419,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_13">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>370</y>
+       <x>40</x>
+       <y>270</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -537,9 +432,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ControlDTCSetting_Off">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>480</y>
-       <width>181</width>
+       <x>220</x>
+       <y>390</y>
+       <width>41</width>
        <height>31</height>
       </rect>
      </property>
@@ -550,9 +445,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ControlDTCSetting_On">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>450</y>
-       <width>181</width>
+       <x>220</x>
+       <y>360</y>
+       <width>41</width>
        <height>31</height>
       </rect>
      </property>
@@ -563,8 +458,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ControlDTCSetting">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>470</y>
+       <x>40</x>
+       <y>320</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -576,10 +471,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_TesterPresent">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>560</y>
+       <x>40</x>
+       <y>370</y>
        <width>171</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -589,7 +484,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ControlDTCSetting_On_2">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>650</x>
        <y>70</y>
        <width>231</width>
        <height>31</height>
@@ -602,10 +497,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ReadDTCInformation">
      <property name="geometry">
       <rect>
-       <x>530</x>
-       <y>80</y>
-       <width>131</width>
-       <height>31</height>
+       <x>490</x>
+       <y>70</y>
+       <width>141</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
@@ -615,7 +510,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_ControlDTCSetting_Off_2">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>650</x>
        <y>100</y>
        <width>181</width>
        <height>31</height>
@@ -628,7 +523,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_stopRoutine">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>650</x>
        <y>190</y>
        <width>171</width>
        <height>31</height>
@@ -641,7 +536,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_RequestRoutineResults">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>650</x>
        <y>220</y>
        <width>171</width>
        <height>31</height>
@@ -654,7 +549,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QPushButton" name="pushButton_StartRoutine">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>650</x>
        <y>160</y>
        <width>171</width>
        <height>31</height>
@@ -664,24 +559,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>StartRoutine</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>200</y>
-       <width>53</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>0x31</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>270</y>
+       <y>210</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -693,8 +575,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>550</y>
+       <x>50</x>
+       <y>360</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -706,8 +588,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>450</y>
+       <x>50</x>
+       <y>310</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -719,8 +601,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>350</y>
+       <x>50</x>
+       <y>260</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -732,27 +614,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
-       <x>530</x>
-       <y>70</y>
+       <x>500</x>
+       <y>60</y>
        <width>53</width>
        <height>15</height>
       </rect>
      </property>
      <property name="text">
       <string>19</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>180</y>
-       <width>53</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>31</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_66">
@@ -837,8 +706,8 @@ SessionControl</string>
     <widget class="QComboBox" name="comboBox_CommunicationControl">
      <property name="geometry">
       <rect>
-       <x>360</x>
-       <y>370</y>
+       <x>350</x>
+       <y>270</y>
        <width>131</width>
        <height>23</height>
       </rect>
@@ -847,8 +716,8 @@ SessionControl</string>
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>360</y>
+       <x>220</x>
+       <y>260</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -860,8 +729,8 @@ SessionControl</string>
     <widget class="QLabel" name="label_72">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>380</y>
+       <x>220</x>
+       <y>280</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -873,9 +742,9 @@ SessionControl</string>
     <widget class="QComboBox" name="comboBox_routine_did">
      <property name="geometry">
       <rect>
-       <x>890</x>
+       <x>820</x>
        <y>190</y>
-       <width>211</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -883,14 +752,14 @@ SessionControl</string>
     <widget class="QLabel" name="label_73">
      <property name="geometry">
       <rect>
-       <x>530</x>
+       <x>500</x>
        <y>190</y>
-       <width>101</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>RoutineControl</string>
+      <string>31-RoutineControl</string>
      </property>
     </widget>
    </widget>
@@ -902,9 +771,9 @@ SessionControl</string>
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>70</y>
+       <y>50</y>
        <width>201</width>
-       <height>50</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -916,9 +785,9 @@ NumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>130</y>
+       <y>90</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -930,7 +799,7 @@ SoftwareVersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>160</y>
+       <y>110</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -943,7 +812,7 @@ SoftwareVersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>100</y>
+       <y>70</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -956,7 +825,7 @@ SoftwareVersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>220</y>
+       <y>150</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -969,9 +838,9 @@ SoftwareVersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>190</y>
+       <y>130</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -983,7 +852,7 @@ VersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>280</y>
+       <y>190</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -996,9 +865,9 @@ VersionNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>250</y>
+       <y>170</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1010,7 +879,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>400</y>
+       <y>270</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1023,9 +892,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>370</y>
+       <y>250</y>
        <width>211</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1036,7 +905,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>340</y>
+       <y>230</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1049,9 +918,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>310</y>
+       <y>210</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1062,9 +931,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>430</y>
+       <y>290</y>
        <width>221</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1075,7 +944,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>460</y>
+       <y>310</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1088,7 +957,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>520</y>
+       <y>350</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1101,9 +970,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>490</y>
+       <y>330</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1113,8 +982,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>110</y>
+       <x>410</x>
+       <y>60</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1126,10 +995,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f0fe">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>120</y>
+       <x>440</x>
+       <y>50</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1139,10 +1008,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f190">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>60</y>
+       <x>440</x>
+       <y>10</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1152,8 +1021,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_20">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>50</y>
+       <x>410</x>
+       <y>30</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1165,9 +1034,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLineEdit" name="lineEdit_f190">
      <property name="geometry">
       <rect>
-       <x>880</x>
-       <y>70</y>
-       <width>221</width>
+       <x>820</x>
+       <y>20</y>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -1175,9 +1044,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLineEdit" name="lineEdit_f0fe">
      <property name="geometry">
       <rect>
-       <x>890</x>
-       <y>130</y>
-       <width>221</width>
+       <x>820</x>
+       <y>70</y>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -1185,8 +1054,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f190_read">
      <property name="geometry">
       <rect>
-       <x>740</x>
-       <y>70</y>
+       <x>700</x>
+       <y>20</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -1198,8 +1067,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f190_write">
      <property name="geometry">
       <rect>
-       <x>810</x>
-       <y>70</y>
+       <x>760</x>
+       <y>20</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -1211,8 +1080,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f0fe_read">
      <property name="geometry">
       <rect>
-       <x>740</x>
-       <y>130</y>
+       <x>700</x>
+       <y>70</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -1224,8 +1093,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f0fe_write">
      <property name="geometry">
       <rect>
-       <x>810</x>
-       <y>130</y>
+       <x>760</x>
+       <y>70</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -1237,10 +1106,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f083">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>300</y>
+       <x>440</x>
+       <y>170</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1250,10 +1119,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f086">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>420</y>
+       <x>440</x>
+       <y>250</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1263,8 +1132,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_117">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>290</y>
+       <x>410</x>
+       <y>180</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1276,10 +1145,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f084">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>360</y>
+       <x>440</x>
+       <y>210</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1289,8 +1158,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_118">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>350</y>
+       <x>410</x>
+       <y>230</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1302,8 +1171,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_119">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>410</y>
+       <x>410</x>
+       <y>270</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1315,10 +1184,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f087">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>490</y>
+       <x>440</x>
+       <y>290</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1328,8 +1197,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_124">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>480</y>
+       <x>410</x>
+       <y>310</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1341,10 +1210,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f08b">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>550</y>
+       <x>440</x>
+       <y>330</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1354,8 +1223,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_125">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>540</y>
+       <x>410</x>
+       <y>350</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1367,8 +1236,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_126">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>230</y>
+       <x>410</x>
+       <y>140</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1380,10 +1249,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f091">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>240</y>
+       <x>440</x>
+       <y>130</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1393,8 +1262,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_127">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>170</y>
+       <x>410</x>
+       <y>100</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1406,10 +1275,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f161">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>180</y>
+       <x>440</x>
+       <y>90</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1420,7 +1289,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>580</y>
+       <y>390</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1433,9 +1302,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>550</y>
+       <y>370</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1448,7 +1317,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
        <x>100</x>
        <y>10</y>
        <width>251</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -1459,7 +1328,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>40</y>
+       <y>30</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -1736,8 +1605,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_81">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>500</y>
+       <x>450</x>
+       <y>40</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1750,7 +1619,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>372</y>
+       <y>362</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1762,8 +1631,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_572f">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>552</y>
+       <x>360</x>
+       <y>92</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1776,7 +1645,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>342</y>
+       <y>332</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1788,8 +1657,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_82">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>470</y>
+       <x>450</x>
+       <y>10</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1801,8 +1670,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_572e">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>522</y>
+       <x>360</x>
+       <y>62</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1815,7 +1684,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>402</y>
+       <y>392</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1827,8 +1696,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_572c">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>462</y>
+       <x>360</x>
+       <y>2</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1841,7 +1710,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>380</y>
+       <y>370</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1853,8 +1722,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_84">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>590</y>
+       <x>450</x>
+       <y>130</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1867,7 +1736,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>312</y>
+       <y>302</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1879,8 +1748,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_5730">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>582</y>
+       <x>360</x>
+       <y>122</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1892,8 +1761,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_85">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>560</y>
+       <x>450</x>
+       <y>100</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1906,7 +1775,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>350</y>
+       <y>340</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1919,7 +1788,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>410</y>
+       <y>400</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1932,7 +1801,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>320</y>
+       <y>310</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -1944,8 +1813,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_89">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>530</y>
+       <x>450</x>
+       <y>70</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1957,8 +1826,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_572d">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>492</y>
+       <x>360</x>
+       <y>32</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1971,7 +1840,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>432</y>
+       <y>422</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -1984,7 +1853,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>440</y>
+       <y>430</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -1996,8 +1865,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_573d">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>122</y>
+       <x>360</x>
+       <y>272</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2009,8 +1878,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_573f">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>152</y>
+       <x>360</x>
+       <y>302</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2022,8 +1891,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_91">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>40</y>
+       <x>450</x>
+       <y>190</y>
        <width>141</width>
        <height>16</height>
       </rect>
@@ -2035,8 +1904,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_573a">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>32</y>
+       <x>360</x>
+       <y>182</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2048,8 +1917,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_92">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>10</y>
+       <x>450</x>
+       <y>160</y>
        <width>121</width>
        <height>16</height>
       </rect>
@@ -2061,8 +1930,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_93">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>250</y>
+       <x>450</x>
+       <y>400</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2075,7 +1944,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>272</y>
+       <y>12</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2087,8 +1956,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_94">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>160</y>
+       <x>450</x>
+       <y>310</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2100,8 +1969,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_95">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>190</y>
+       <x>450</x>
+       <y>340</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2113,8 +1982,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_5741">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>212</y>
+       <x>360</x>
+       <y>362</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2126,8 +1995,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_96">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>130</y>
+       <x>450</x>
+       <y>280</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2139,8 +2008,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_5742">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>242</y>
+       <x>360</x>
+       <y>392</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2153,7 +2022,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>280</y>
+       <y>20</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2165,8 +2034,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_98">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>220</y>
+       <x>450</x>
+       <y>370</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2178,8 +2047,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_99">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>100</y>
+       <x>450</x>
+       <y>250</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2191,8 +2060,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_5731">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>2</y>
+       <x>360</x>
+       <y>152</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2204,8 +2073,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_573b">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>62</y>
+       <x>360</x>
+       <y>212</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2217,8 +2086,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_5740">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>182</y>
+       <x>360</x>
+       <y>332</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2230,8 +2099,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_573c">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>92</y>
+       <x>360</x>
+       <y>242</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2243,8 +2112,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_100">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>70</y>
+       <x>450</x>
+       <y>220</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2257,7 +2126,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>432</y>
+       <y>162</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2270,7 +2139,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>462</y>
+       <y>192</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2283,7 +2152,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>350</y>
+       <y>80</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2296,7 +2165,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>342</y>
+       <y>72</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2309,7 +2178,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>320</y>
+       <y>50</y>
        <width>101</width>
        <height>16</height>
       </rect>
@@ -2322,7 +2191,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>560</y>
+       <y>290</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2335,7 +2204,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>582</y>
+       <y>312</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2348,7 +2217,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>470</y>
+       <y>200</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2361,7 +2230,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>500</y>
+       <y>230</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2374,7 +2243,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>522</y>
+       <y>252</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2387,7 +2256,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>440</y>
+       <y>170</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2400,7 +2269,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>552</y>
+       <y>282</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2413,7 +2282,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>590</y>
+       <y>320</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2426,7 +2295,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>530</y>
+       <y>260</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2439,7 +2308,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>410</y>
+       <y>140</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2452,7 +2321,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>312</y>
+       <y>42</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2465,7 +2334,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>372</y>
+       <y>102</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2478,7 +2347,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>492</y>
+       <y>222</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2491,7 +2360,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>630</x>
-       <y>402</y>
+       <y>132</y>
        <width>79</width>
        <height>31</height>
       </rect>
@@ -2504,7 +2373,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>720</x>
-       <y>380</y>
+       <y>110</y>
        <width>120</width>
        <height>16</height>
       </rect>
@@ -2517,7 +2386,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>370</y>
+       <y>360</y>
        <width>113</width>
        <height>31</height>
       </rect>
@@ -2637,25 +2506,12 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <attribute name="title">
      <string>EOL DID</string>
     </attribute>
-    <widget class="QPushButton" name="pushButton_eol_f187">
-     <property name="geometry">
-      <rect>
-       <x>22</x>
-       <y>111</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F187</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_1060">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>171</width>
+       <x>30</x>
+       <y>0</y>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
@@ -2663,364 +2519,13 @@ LogisticSoftwarePartNumberDataIdentifier</string>
       <string>发送1060并维持</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_eol_f189">
-     <property name="geometry">
-      <rect>
-       <x>22</x>
-       <y>140</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F189</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f18c">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>285</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F18C</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f013">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>198</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F013</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f089">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>169</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F089</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f18a">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>227</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F18A</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f18b">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>256</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F18B</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>107</x>
-       <y>111</y>
-       <width>108</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>整车厂定义的零件号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_21">
-     <property name="geometry">
-      <rect>
-       <x>107</x>
-       <y>140</y>
-       <width>120</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>整车厂ECU软件版本号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_22">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>170</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>整车厂ECU硬件版本号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_23">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>390</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>SOC软件版本号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_24">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>200</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>整车厂定义软件零件号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_25">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>260</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>ECU生产日期</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_26">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>230</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>供应商代码</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_27">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>290</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>ECU序列号（批次号/流水号）</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_28">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>330</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>软件零件号</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_29">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>360</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>MCU软件版本号</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_da10">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>351</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>DA10</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f1ae">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>322</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F1AE</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f195">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>380</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F195</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_f193">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>480</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>F193</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_30">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>450</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string> MEZZ板ID</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_fd00">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>440</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>FD00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_31">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>490</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string> MAIN板ID</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_fdf6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>520</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>FDF6</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_32">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>530</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>总成号</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_eol_fd98">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>410</y>
-       <width>79</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>FD98</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_33">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>420</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>DP IN 固件版本号</string>
-     </property>
-    </widget>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>540</x>
-       <y>280</y>
+       <x>390</x>
+       <y>240</y>
        <width>242</width>
-       <height>170</height>
+       <height>182</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
@@ -3113,9 +2618,9 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>800</x>
-       <y>280</y>
-       <width>255</width>
+       <x>660</x>
+       <y>240</y>
+       <width>257</width>
        <height>185</height>
       </rect>
      </property>
@@ -3209,10 +2714,10 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>790</x>
-       <y>100</y>
-       <width>295</width>
-       <height>170</height>
+       <x>660</x>
+       <y>50</y>
+       <width>297</width>
+       <height>182</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
@@ -3306,8 +2811,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>310</y>
-       <width>451</width>
+       <y>240</y>
+       <width>301</width>
        <height>22</height>
       </rect>
      </property>
@@ -3318,8 +2823,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QSlider" name="verticalSlider">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>80</y>
+       <x>310</x>
+       <y>10</y>
        <width>22</width>
        <height>241</height>
       </rect>
@@ -3331,8 +2836,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_58">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>170</y>
+       <x>290</x>
+       <y>160</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -3341,26 +2846,13 @@ LogisticSoftwarePartNumberDataIdentifier</string>
       <string>pass</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_59">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>410</x>
-       <y>400</y>
-       <width>53</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>fail</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>100</y>
-       <width>242</width>
-       <height>170</height>
+       <x>390</x>
+       <y>50</y>
+       <width>244</width>
+       <height>182</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -3445,6 +2937,226 @@ LogisticSoftwarePartNumberDataIdentifier</string>
        <widget class="QLabel" name="label_38">
         <property name="text">
          <string>总成号</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>250</y>
+       <width>187</width>
+       <height>213</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_5">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f1ae">
+        <property name="text">
+         <string>F1AE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_28">
+        <property name="text">
+         <string>软件零件号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_eol_da10">
+        <property name="text">
+         <string>DA10</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_29">
+        <property name="text">
+         <string>MCU软件版本号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f195">
+        <property name="text">
+         <string>F195</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>SOC软件版本号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_eol_fd98">
+        <property name="text">
+         <string>FD98</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_33">
+        <property name="text">
+         <string>DP IN 固件版本号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_eol_fd00">
+        <property name="text">
+         <string>FD00</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string> MEZZ板ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f193">
+        <property name="text">
+         <string>F193</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_31">
+        <property name="text">
+         <string> MAIN板ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButton_eol_fdf6">
+        <property name="text">
+         <string>FDF6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="label_32">
+        <property name="text">
+         <string>总成号</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>250</width>
+       <height>213</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_6">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f187">
+        <property name="text">
+         <string>F187</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_18">
+        <property name="text">
+         <string>整车厂定义的零件号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f189">
+        <property name="text">
+         <string>F189</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>整车厂ECU软件版本号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f089">
+        <property name="text">
+         <string>F089</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>整车厂ECU硬件版本号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f013">
+        <property name="text">
+         <string>F013</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>整车厂定义软件零件号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f18a">
+        <property name="text">
+         <string>F18A</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="label_26">
+        <property name="text">
+         <string>供应商代码</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f18b">
+        <property name="text">
+         <string>F18B</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>ECU生产日期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButton_eol_f18c">
+        <property name="text">
+         <string>F18C</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="label_27">
+        <property name="text">
+         <string>ECU序列号（批次号/流水号）</string>
         </property>
        </widget>
       </item>
@@ -3632,8 +3344,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_read_f011">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>170</y>
+       <x>410</x>
+       <y>200</y>
        <width>111</width>
        <height>51</height>
       </rect>
@@ -3647,7 +3359,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
      <property name="geometry">
       <rect>
        <x>410</x>
-       <y>250</y>
+       <y>260</y>
        <width>121</width>
        <height>20</height>
       </rect>
@@ -3659,8 +3371,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLineEdit" name="lineEdit_byte">
      <property name="geometry">
       <rect>
-       <x>530</x>
-       <y>240</y>
+       <x>520</x>
+       <y>250</y>
        <width>31</width>
        <height>31</height>
       </rect>
@@ -3672,8 +3384,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f011_analyze">
      <property name="geometry">
       <rect>
-       <x>580</x>
-       <y>230</y>
+       <x>560</x>
+       <y>240</y>
        <width>71</width>
        <height>41</height>
       </rect>
@@ -3687,11 +3399,106 @@ LogisticSoftwarePartNumberDataIdentifier</string>
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>650</y>
-     <width>1141</width>
-     <height>221</height>
+     <x>10</x>
+     <y>560</y>
+     <width>1021</width>
+     <height>241</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_clear_log">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>520</y>
+     <width>75</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ClearLog</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_save_log">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>520</y>
+     <width>75</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SaveLog</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit_free_input">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>500</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_send">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>510</y>
+     <width>75</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>331</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_physical">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>530</y>
+     <width>98</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>物理寻址</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_functional">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>530</y>
+     <width>98</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>功能寻址</string>
    </property>
   </widget>
  </widget>

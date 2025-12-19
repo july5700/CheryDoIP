@@ -1,8 +1,11 @@
 import pytest
+import allure
 from loguru import logger
 from function import DoIPClientForTest, DataHandle
 
 
+@allure.epic("Chery-DoIP")
+@allure.feature("ECU DID")
 class TestECUDID:
 
     @pytest.mark.parametrize("msg, expected_response", [
@@ -55,10 +58,10 @@ class TestECUDID:
         ("225784", "625784"),
 
     ])
-    def test_control_dtc_setting(self, doip_client, msg, expected_response):
+    def test_ecu_did(self, doip_client, msg, expected_response):
         res = DoIPClientForTest(doip_client).basic_send_receive(msg)
         logger.info(f"doip_client object: {doip_client}")
-        assert res[:6] == expected_response
+        assert res[:6].upper() == expected_response.upper()
 
     def test_write_data_by_identifier_d008(self, doip_client):
         # DoIPClientForTest(doip_client).basic_send_receive('1003')
@@ -68,10 +71,10 @@ class TestECUDID:
         random_byte = DataHandle().random_bytes_string(4)
         res_after_write = DoIPClientForTest(doip_client).basic_send_receive('2ed008' + random_byte)
         logger.critical(f"res_after_write= {res_after_write}")
-        assert res_after_write == '6ed008'
+        assert res_after_write.upper() == '6ed008'.upper()
         read_res_after_write = DoIPClientForTest(doip_client).basic_send_receive('22d008')
-        assert read_res_after_write == "62d008"+random_byte.lower()
-        assert read_res_after_write != read_res_before_write
+        assert read_res_after_write.upper() == "62d008".upper()+random_byte.upper()
+        assert read_res_after_write.upper() != read_res_before_write.upper()
 
 if __name__ == "__main__":
     pytest.main([__file__])

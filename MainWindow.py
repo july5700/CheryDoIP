@@ -1,4 +1,5 @@
 import sys
+import os
 from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
 from PySide6.QtCore import QObject, Signal, Slot, QEventLoop, QTimer
 # 导入你由 .ui 文件生成的 UI 类
@@ -14,7 +15,8 @@ import re
 from dtc import DTCParser
 from chery_dict import RoutineDID, DTCNumber, CodingDID
 
-logger = Log(1).create_log_sample()
+debug_mode = TomlConfig('config.toml').get('current.debug_mode')
+logger = Log(debug_mode).create_log_sample()
 
 def ansi_to_html(text):
     """
@@ -74,7 +76,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.setupUi(self)
         self.frame = DoIPMessage()
         self.data = DataHandle()
-        self.conf = TomlConfig('config.toml')
+        self.conf = TomlConfig('config.toml' )
         self.log_level = self.conf.get("current.log_level")
         self.activate_type = 0x00
 
@@ -86,7 +88,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.dtc = DTCParser
 
         # 移除默认的 stderr 输出（可选）
-        logger.remove()
+        # logger.remove()
         # 添加自定义 sink, log level在此处修改
         logger.add(self.log_handler.write, level=self.log_level, enqueue=True, colorize=True)
 
@@ -103,6 +105,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.pushButton_send.clicked.connect(self.send_free_input)
         self.pushButton_send.clicked.connect(self.save_current_input)
         self.pushButton_clear_log.clicked.connect(self.clear_log)
+        self.pushButton_save_log.clicked.connect(self.save_log)
 
         self.history_manager = HistoryManager(
             combo=self.comboBox,
@@ -391,21 +394,20 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
 
             self.frame.positive_response(msg)
 
-    def set_routine_activate_type(self):
-        current_activate_type = self.comboBox_routine_activate_type.currentText()
-        match current_activate_type:
-            case '0x00':
-                self.activate_type = 0x00
-                logger.info("Set routing activation type: 0x00--Default")
-            case '0x01':
-                self.activate_type = 0x01
-                logger.info("Set routing activation type: 0x01--WWH-OBD")
-            case 'None':
-                self.activate_type = None
-            case '0xE0':
-                self.activate_type = 0xE0
-        logger.info("Set routing activation type: 0xE0--Central security")
-
+    # def set_routine_activate_type(self):
+    #     current_activate_type = self.comboBox_routine_activate_type.currentText()
+    #     match current_activate_type:
+    #         case '0x00':
+    #             self.activate_type = 0x00
+    #             logger.info("Set routing activation type: 0x00--Default")
+    #         case '0x01':
+    #             self.activate_type = 0x01
+    #             logger.info("Set routing activation type: 0x01--WWH-OBD")
+    #         case 'None':
+    #             self.activate_type = None
+    #         case '0xE0':
+    #             self.activate_type = 0xE0
+    #     logger.info("Set routing activation type: 0xE0--Central security")
 
     def on_mode_changed(self):
         if self.radioButton_physical.isChecked():
@@ -414,6 +416,13 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
             self.address = self.conf.get("current.ecu_functional_address")
         logger.debug(f"current address is：{self.address}")
 
+    def save_log(self):
+        content = self.textBrowser.toPlainText()
+        file_path = os.path.join(os.getcwd(), "output.txt")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        logger.info(f"Log saved: {file_path}")
     def check_all_dtc(self):
         res = self.frame.basic_send_response('190209')
         # res = "59 09 C1 51 87 09 C1 29 87 09 C1 03 87 09 C1 31 87 09 C1 41 87 09 D1 89 87 08"
