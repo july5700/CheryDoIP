@@ -19,7 +19,7 @@ def cal_ace_emac(seed):
     # print("AES_CMAC:", mac.hexdigest())
     return mac.hexdigest()
 
-def cal_tea_variant(seed, pinp=0xFFFFFFFF):
+def cal_tea_variant(sd, pinp=0xFFFFFFFF):
     """
     The seed-to-key algorithm used in 05/06 (based on the TEA variant)
 
@@ -31,6 +31,7 @@ def cal_tea_variant(seed, pinp=0xFFFFFFFF):
         64-bit key value
     """
     # Decompose the 64-bit seed into two 32-bit parts
+    seed = int(sd, 16)
     v = [0, 0]
     v[0] = (seed >> 32) & 0xFFFFFFFF
     v[1] = seed & 0xFFFFFFFF
@@ -80,8 +81,9 @@ if __name__ == '__main__':
     print(f"a = {a}")
     print(f"type of a = {type(a)}")
 
-    seed2 = 0x7eeb79e497ef3c6d
-    b = cal_tea_variant(seed2)
+    seed2 = 'd2651923d9e30f51'
+    seed3 = '7eeb79e497ef3c6d'
+    b = cal_tea_variant(seed3)
     print(f"b = {b}")
     print(f"type of b = {type(b)}")
 

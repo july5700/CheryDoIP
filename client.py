@@ -161,7 +161,7 @@ class DoIPClient:
         tcp_port=TCP_DATA_UNSECURED,
         udp_port=UDP_DISCOVERY,
         activation_type=RoutingActivationRequest.ActivationType.Default,
-        protocol_version=0x02,
+        protocol_version=0x03,
         client_logical_address=0x0E00,
         client_ip_address=None,
         use_secure=False,

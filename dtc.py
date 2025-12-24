@@ -110,7 +110,7 @@ class DTCParser:
             return []
 
         # 跳过服务响应头 59 09
-        payload = bytes_list[2:]
+        payload = bytes_list[3:]
 
         dtc_status_pairs = []
         i = 0
@@ -175,7 +175,7 @@ class DTCParser:
 
 if __name__ == "__main__":
     # 示例响应：包含当前故障（09）和历史故障（08）
-    response = "59 09 D2 00 87 09 C1 31 87 09 D1 61 87 09 C1 03 87 09 C1 29 87 09 C1 51 87 09 D2 56 87 09 D1 62 87 09 D2 01 87 09 D1 69 87 09 C1 28 87 09 D1 97 87 09 D1 68 87 09 D1 89 87 09 C1 86 87 09 C1 41 87 09 D1 94 87 09 C1 42 87 09 D2 14 87 09 C1 11 87 09"
+    response = "59 02 09 D2 00 87 09 C1 31 87 09 D1 61 87 09 C1 03 87 09 C1 29 87 09 C1 51 87 09 D2 56 87 09 D1 62 87 09 D2 01 87 09 D1 69 87 09 C1 28 87 09 D1 97 87 09 D1 68 87 09 D1 89 87 09 C1 86 87 09 C1 41 87 09 D1 94 87 09 C1 42 87 09 D2 14 87 09 C1 11 87 09"
 
     # 按状态获取DTC
     current_dtcs, history_dtcs = DTCParser.get_known_dtc_by_status(response)
