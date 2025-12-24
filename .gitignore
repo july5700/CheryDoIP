@@ -5,6 +5,7 @@ MainWindow.dist/
 MainWindow.onefile-build/
 output/
 nuitka-crash-report.xml
+MainWindow/
 
 # report
 result/

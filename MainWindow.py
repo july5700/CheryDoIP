@@ -141,6 +141,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
 
         # 27 服务
         self.pushButton_SecurityAccess.clicked.connect(self.frame.send_security_access_2701)
+        self.pushButton_SecurityAccess_0506.clicked.connect(self.frame.send_security_access_2705)
 
         # 11 服务，被ECU拒绝
         self.pushButton_hardReset.clicked.connect(lambda: self.frame.positive_response('1101'))

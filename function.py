@@ -1,6 +1,6 @@
 from client import DoIPClient
 from binascii import unhexlify
-from security_access import cal_ace_emac
+from security_access import cal_ace_emac, cal_tea_variant
 # from loguru import logger
 from Lib.Log import Log
 from Lib.ConfigCache import TomlConfig
@@ -49,10 +49,25 @@ class DoIPClientForTest(object):
         _ = self.client.send_diagnostic(unhexlify(new_msg))
         final_response = self.client.receive_diagnostic().hex()
         if final_response == "6702":
-            logger.success(f"Security Access successful: {final_response}")
+            logger.success(f"Security Access 01/02 successful: {final_response}")
         else:
-            logger.error(f"Security Access denied: {final_response}")
+            logger.error(f"Security Access 01/02 denied: {final_response}")
         return final_response
+
+    def security_access_level_2(self):
+        _ = unhexlify('2705')
+        self.client.send_diagnostic(_)
+        seed = self.client.receive_diagnostic().hex()[4:]
+        token = cal_tea_variant(seed)
+        new_msg = '2706' + token
+        _ = self.client.send_diagnostic(unhexlify(new_msg))
+        final_response = self.client.receive_diagnostic().hex()
+        if final_response == "6706":
+            logger.success(f"Security Access 05/06 successful: {final_response}")
+        else:
+            logger.error(f"Security Access 05/06 denied: {final_response}")
+        return final_response
+
 
     def session_and_security_level(self,session=1, level=1):
         pass
@@ -165,6 +180,32 @@ class DoIPMessage(object):
                 logger.error(f"fail response = {response}")
                 return 0
 
+    def send_security_access_2705(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
+
+            br = unhexlify('2705')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_tea_variant(seed)
+            new_request = '2706' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "6706":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
 
 
 
