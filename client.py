@@ -14,8 +14,10 @@ from constants import (
     LINK_LOCAL_MULTICAST_ADDRESS,
 )
 from messages import *
+from Lib.ConfigCache import TomlConfig
 from loguru import logger as logger2
 logger = logging.getLogger("doipclient")
+conf = TomlConfig("config.toml")
 
 
 class Parser:
@@ -161,7 +163,7 @@ class DoIPClient:
         tcp_port=TCP_DATA_UNSECURED,
         udp_port=UDP_DISCOVERY,
         activation_type=RoutingActivationRequest.ActivationType.Default,
-        protocol_version=0x03,
+        protocol_version=conf.get('current.protocol_version'),  # 03-Chery8397； 02-AI BOX
         client_logical_address=0x0E00,
         client_ip_address=None,
         use_secure=False,
@@ -756,6 +758,31 @@ class DoIPClient:
                     )
                 )
 
+    # def receive_diagnostic(self, timeout=None):
+    #     """Receive a raw diagnostic payload (ie: UDS) from the ECU.
+    #
+    #     :return: Raw UDS payload
+    #     :rtype: bytearray
+    #     :raises TimeoutError: No diagnostic response received in time
+    #     """
+    #     start_time = time.time()
+    #     while True:
+    #         ellapsed_time = time.time() - start_time
+    #         if timeout and ellapsed_time > timeout:
+    #             raise TimeoutError("Timed out waiting for diagnostic response")
+    #         if timeout:
+    #             result = self.read_doip(timeout=(timeout - ellapsed_time))
+    #         else:
+    #             result = self.read_doip()
+    #         if type(result) == DiagnosticMessage:
+    #             return result.user_data
+    #         elif result:
+    #             logger.warning(
+    #                 "Received unexpected DoIP message type {}. Ignoring".format(
+    #                     type(result)
+    #                 )
+    #             )
+
     def receive_diagnostic(self, timeout=None):
         """Receive a raw diagnostic payload (ie: UDS) from the ECU.
 
@@ -773,6 +800,27 @@ class DoIPClient:
             else:
                 result = self.read_doip()
             if type(result) == DiagnosticMessage:
+                # ================= 新增 7F xx 78 延迟处理逻辑 =================
+                # 检查是否收到 7F xx 78 (ResponsePending) 信号
+                # UDS 负响应格式：7F [服务 ID] [响应码]
+                # 例如：7F 14 78 表示对服务 0x14 的 ResponsePending
+                #
+                # result.user_data 是 bytearray 类型
+                # bytearray(b'\x7f\x14\x78')[0] == 0x7F  # True
+                # bytearray(b'\x7f\x14\x78')[1] == 0x14  # True (服务 ID)
+                # bytearray(b'\x7f\x14\x78')[2] == 0x78  # True (ResponsePending)
+                logger2.debug(f"tmp--recieve: {result.user_data}")
+                if len(result.user_data) >= 3 and result.user_data[0] == 0x7F and result.user_data[2] == 0x78:
+                    service_id = result.user_data[1]
+                    # 从 config.toml 读取等待时间，默认 2 秒
+                    # 需要在 config.toml 的 [current] 段添加：pending_response_time = 2.0
+                    pending_time = conf.get('current.pending_response_time', default=2.0)
+                    logger2.warning(f"收到 7F {service_id:02X} 78 ResponsePending 信号，等待 {pending_time} 秒...")
+                    time.sleep(pending_time)
+                    # 继续循环，收取下一个正反馈信号，不 return
+                    logger2.info("继续等待正反馈信号...")
+                    continue
+                # =================================================================
                 return result.user_data
             elif result:
                 logger.warning(

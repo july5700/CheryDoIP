@@ -1,11 +1,13 @@
 from client import DoIPClient
 from binascii import unhexlify
-from security_access import cal_ace_emac, cal_tea_variant
+from security_access import (cal_ace_emac, cal_tea_variant, cal_ace_emac_aibox_2701, cal_ace_emac_aibox_2719,
+                             cal_tea_variant_aibox, cal_ace_emac_2711)
 # from loguru import logger
 from Lib.Log import Log
 from Lib.ConfigCache import TomlConfig
 import re
 import random
+# from openpyxl import load_workbook
 
 """
 函数      输入类型	    输出类型    	功能
@@ -130,6 +132,21 @@ class DoIPMessage(object):
             # logger.info(f"type of Response: {type(a).__name__}")
             return re_current
 
+    def udp_send(self, msg, target_address, activation_type_code=None):
+        with DoIPClient(self.ecu_ip, target_address, client_logical_address=self.tester_address,
+                        activation_type=activation_type_code) as doip:
+            br = unhexlify(msg.replace(" ", ""))
+            logger.info(f"UDP Send: \t{DataHandle.hex_output(br)}")
+            doip._udp_sock.sendto(br, (doip._ecu_ip_address, doip._udp_port))
+            try:
+                response = doip._udp_sock.recv(4096)
+                res_hex = response.hex()
+                logger.info(f"UDP Response: \t{DataHandle.hex_output(res_hex)}")
+                return res_hex
+            except Exception as e:
+                logger.warning(f"No response or error: {e}")
+                return ""
+
     def positive_response(self, msg):
         response = self.basic_send_response(msg)
         if response.startswith("7f"):
@@ -152,6 +169,27 @@ class DoIPMessage(object):
             logger.trace(f"Send: \t{DataHandle.hex_output(br)}")
             uds_command = bytearray(br)
             doip.send_diagnostic(uds_command)
+            response = doip.receive_diagnostic()
+
+            # a = 123
+            # logger.info(f"Response: {hex_output(response)}")
+            res_str = DataHandle.hex_output(response.hex())
+            logger.info(f"Response: \t{res_str}")
+
+    def raw_send(self, hex_data):
+        """直接发送原始十六进制数据（不经过DoIP封装），支持构造畸形报文"""
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            br = unhexlify(hex_data.replace(" ", ""))
+            logger.info(f"Raw Send: \t{DataHandle.hex_output(br)}")
+            doip._tcp_sock.send(br)
+            try:
+                response = doip._tcp_sock.recv(4096)
+                res_hex = response.hex()
+                logger.info(f"Response: \t{DataHandle.hex_output(res_hex)}")
+                return res_hex
+            except Exception as e:
+                logger.warning(f"No response or error: {e}")
+                return ""
 
     def send_security_access_2701(self):
         with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
@@ -174,6 +212,137 @@ class DoIPMessage(object):
 
             response = doip.receive_diagnostic().hex().upper()
             if response == "6702":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
+
+    def send_security_access_2711(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
+
+            br = unhexlify('2711')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_ace_emac_2711(seed)
+            new_request = '2712' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "6712":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
+
+    def send_security_access_2701_aibox(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
+
+            br = unhexlify('2701')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_ace_emac_aibox_2701(seed)
+            new_request = '2702' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "6702":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
+
+    def send_security_access_2719_aibox(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
+
+            br = unhexlify('2719')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_ace_emac_aibox_2719(seed)
+            new_request = '271a' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "671a":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
+
+    def send_security_access_2705_aibox(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
+
+            br = unhexlify('2705')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_tea_variant_aibox(seed)
+            new_request = '2706' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "6706":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
+
+    def send_security_access_2761(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            br = unhexlify('2761')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_ace_emac(seed)
+            new_request = '2762' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "6762":
                 logger.success(f"pass response = {response}")
                 return 1
             else:
@@ -207,7 +376,32 @@ class DoIPMessage(object):
                 logger.error(f"fail response = {response}")
                 return 0
 
+    def send_security_access_2719(self):
+        with DoIPClient(self.ecu_ip, self.physical_address, client_logical_address=self.tester_address) as doip:
+            # ✅ 明确使用 bytearray
+            # uds_command = bytearray([0x10, 0xC0])  # 进入扩展诊断会话
+            # msg = "1003"
 
+            br = unhexlify('2719')
+            # uds_command = bytearray(br)
+            doip.send_diagnostic(br)
+
+            seed = doip.receive_diagnostic().hex()[4:]
+            logger.info(f"seed: {seed}")
+            # logger.info(f"type of seed = {type(seed)}")
+
+            token = cal_tea_variant(seed)
+            new_request = '271a' + token
+            new_br = unhexlify(new_request)
+            doip.send_diagnostic(new_br)
+
+            response = doip.receive_diagnostic().hex().upper()
+            if response == "671a":
+                logger.success(f"pass response = {response}")
+                return 1
+            else:
+                logger.error(f"fail response = {response}")
+                return 0
 
 
 
@@ -442,8 +636,22 @@ class DataHandle:
         logger.info(res)
         return res
 
-
-
+    # @staticmethod
+    # def get_2ef011_value():
+    #     # 加载 Excel 文件
+    #     file_path = conf.get('current.f011_data', "CheryE0V下线配置计算表V1.0.xlsx")
+    #     cell_location = conf.get("current.cell_location", "B1802")
+    #     wb = load_workbook(file_path, data_only=True)  # 替换为你的文件路径
+    #
+    #     # 选择工作表（默认第一个）
+    #     ws = wb.active
+    #     # 或者按名称选择：ws = wb["Sheet1"]
+    #
+    #     # 方法 1：通过单元格名称（如 "C3"）
+    #     cell_value = ws[cell_location].value
+    #
+    #     logger.info(f"要写入的did coding的值是: {cell_value}")
+    #     return cell_value
 
 
 

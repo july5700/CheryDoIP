@@ -76,7 +76,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.setupUi(self)
         self.frame = DoIPMessage()
         self.data = DataHandle()
-        self.conf = TomlConfig('config.toml' )
+        self.conf = TomlConfig('config.toml')
         self.log_level = self.conf.get("current.log_level")
         self.activate_type = 0x00
 
@@ -104,8 +104,11 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
 
         self.pushButton_send.clicked.connect(self.send_free_input)
         self.pushButton_send.clicked.connect(self.save_current_input)
+        self.pushButton_send_invalid.clicked.connect(self.send_raw_input)
+        self.pushButton_udp_send.clicked.connect(self.send_udp_input)
         self.pushButton_clear_log.clicked.connect(self.clear_log)
         self.pushButton_save_log.clicked.connect(self.save_log)
+
 
         self.history_manager = HistoryManager(
             combo=self.comboBox,
@@ -121,6 +124,10 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.timer_3e_eol = QTimer()
         self.timer_3e_eol.timeout.connect(self.send_3e_eol_once)
         self.is_sending_3e_eol = False
+
+        self.timer_xx = QTimer()
+        self.timer_xx.timeout.connect(self.send_xx_once)
+        self.is_sending_xx = False
 
         self.history_key = "signal_history"
         self.max_history = 20
@@ -138,10 +145,13 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         # 10 服务
         self.pushButton_defaultSession.clicked.connect(lambda: self.frame.positive_response('1001'))
         self.pushButton_extendedDiagnosticSession.clicked.connect(lambda: self.frame.positive_response('1003'))
+        self.pushButton_1061.clicked.connect(lambda: self.frame.positive_response('1060'))
 
         # 27 服务
         self.pushButton_SecurityAccess.clicked.connect(self.frame.send_security_access_2701)
         self.pushButton_SecurityAccess_0506.clicked.connect(self.frame.send_security_access_2705)
+        self.pushButton_SecurityAccess_6162.clicked.connect(self.frame.send_security_access_2761)
+        self.pushButton_SecurityAccess_271112.clicked.connect(self.frame.send_security_access_2711)
 
         # 11 服务，被ECU拒绝
         self.pushButton_hardReset.clicked.connect(lambda: self.frame.positive_response('1101'))
@@ -175,6 +185,8 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
 
         # 3E 服务
         self.pushButton_TesterPresent.clicked.connect(self.toggle_send_3e)
+
+        self.pushButton_free_continue_send.clicked.connect(self.toggle_send_xx)
 
         # 19 服务
         self.pushButton_ReadDTCInformation.clicked.connect(lambda: self.frame.positive_response('1902ff'))
@@ -340,7 +352,7 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         self.pushButton_f011_analyze.clicked.connect(lambda: DataHandle().analyze_byte_in_response(
             self.res_f011, int(self.lineEdit_byte.text()), CodingDID().coding_did
         ))
-
+        self.pushButton_2ef110.clicked.connect(self.write_f011_value)
     def undefined_button_init(self):
         self.pushButton_undefined_1.setText(self.conf.get("undefined.button_name_1"))
         self.pushButton_undefined_1.clicked.connect(
@@ -386,6 +398,13 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
 
     def refresh_f011_value(self):
         self.res_f011 = self.frame.basic_send_response('22f011')
+
+    def write_f011_value(self):
+        # data = DataHandle().get_2ef011_value()
+        data = self.conf.get('current.f011_data')
+        logger.info(f"Sending: {data}")
+        # logger.info(f"Sending: {data.lower().replace(" ", "")}")
+        self.frame.basic_send_response(data.lower().replace(" ", ""))
 
     def send_28_combobox(self):
         _ = self.comboBox_CommunicationControl.currentText()
@@ -529,6 +548,20 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
             self.is_sending_3e_eol = True
             logger.info("Started sending 3E00")
 
+    def toggle_send_xx(self):
+        msg = self.lineEdit_xx.text()
+        """点击按钮调用此方法：启动或停止发送"""
+        if self.is_sending_xx:
+            self.timer_xx.stop()
+            self.is_sending_xx = False
+            logger.info(f"Stopped sending {msg}")
+            # 可选：更新按钮文本
+            # self.button.setText("Start Sending")
+        else:
+            self.timer_xx.start(4000)  # 每4000毫秒（4秒）触发一次
+            self.is_sending_xx = True
+            logger.info(f"Started sending {msg}")
+
     def send_3e_once(self):
         """每次只发送一次"""
         self.frame.send_without_response('3e00')
@@ -536,6 +569,11 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
     def send_3e_eol_once(self):
         self.frame.send_without_response('3e00')
 
+    def send_xx_once(self):
+        """每次只发送一次"""
+        msg = self.lineEdit_xx.text()
+        # logger.info(f"going to send{msg}")
+        self.frame.send_without_response(msg)
 
     @Slot(str)
     def append_log(self, msg: str):
@@ -554,6 +592,11 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         # logger.info(f"Send: \t{hex_output(msg)}")
         return msg
 
+    def get_invalid_input(self):
+        msg = self.textEdit_invalid_input.toPlainText()
+        # logger.info(f"Send: \t{hex_output(msg)}")
+        return msg
+
     def send_free_input(self):
         msg = self.data.wash_input(self.get_free_input())
         # logger.info(f"Send: \t{hex_output(msg)}")
@@ -562,6 +605,23 @@ class MainWindow(QMainWindow, ui_DoIP.Ui_Dialog):
         activate_type = self.activate_type
         # logger.info(f"activate_type = {activate_type}")
         self.frame.free_send(msg, target_address, activation_type_code=activate_type)
+
+    def get_free_input(self):
+        msg = self.textEdit_free_input.toPlainText()
+        # logger.info(f"Send: \t{hex_output(msg)}")
+        return msg
+
+    def send_udp_input(self):
+        msg = self.data.wash_input(self.textEdit_udp_input.toPlainText())
+        target_address = self.address
+        self.frame.udp_send(msg, target_address, activation_type_code=None)
+
+    def send_raw_input(self):
+        """发送原始十六进制数据（不经过DoIP封装），支持构造畸形报文"""
+        msg = self.get_invalid_input().strip()
+        if msg:
+            logger.info(f"will send {msg}")
+            self.frame.raw_send(msg)
 
 
 def main():

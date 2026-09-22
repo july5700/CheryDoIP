@@ -105,6 +105,24 @@ class Ui_Dialog(object):
         self.label_123 = QLabel(self.tab_9)
         self.label_123.setObjectName(u"label_123")
         self.label_123.setGeometry(QRect(380, 410, 111, 20))
+        self.pushButton_free_continue_send = QPushButton(self.tab_9)
+        self.pushButton_free_continue_send.setObjectName(u"pushButton_free_continue_send")
+        self.pushButton_free_continue_send.setGeometry(QRect(700, 180, 141, 31))
+        self.lineEdit_xx = QLineEdit(self.tab_9)
+        self.lineEdit_xx.setObjectName(u"lineEdit_xx")
+        self.lineEdit_xx.setGeometry(QRect(520, 180, 181, 31))
+        self.textEdit_invalid_input = QTextEdit(self.tab_9)
+        self.textEdit_invalid_input.setObjectName(u"textEdit_invalid_input")
+        self.textEdit_invalid_input.setGeometry(QRect(410, 250, 441, 31))
+        self.pushButton_send_invalid = QPushButton(self.tab_9)
+        self.pushButton_send_invalid.setObjectName(u"pushButton_send_invalid")
+        self.pushButton_send_invalid.setGeometry(QRect(530, 280, 191, 41))
+        self.pushButton_udp_send = QPushButton(self.tab_9)
+        self.pushButton_udp_send.setObjectName(u"pushButton_udp_send")
+        self.pushButton_udp_send.setGeometry(QRect(540, 370, 191, 41))
+        self.textEdit_udp_input = QTextEdit(self.tab_9)
+        self.textEdit_udp_input.setObjectName(u"textEdit_udp_input")
+        self.textEdit_udp_input.setGeometry(QRect(420, 340, 441, 31))
         self.tabWidget.addTab(self.tab_9, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -122,22 +140,22 @@ class Ui_Dialog(object):
         self.pushButton_softReset.setGeometry(QRect(160, 170, 181, 31))
         self.pushButton_SecurityAccess = QPushButton(self.tab)
         self.pushButton_SecurityAccess.setObjectName(u"pushButton_SecurityAccess")
-        self.pushButton_SecurityAccess.setGeometry(QRect(40, 220, 171, 31))
+        self.pushButton_SecurityAccess.setGeometry(QRect(40, 230, 171, 31))
         self.pushButton_13 = QPushButton(self.tab)
         self.pushButton_13.setObjectName(u"pushButton_13")
-        self.pushButton_13.setGeometry(QRect(40, 270, 171, 31))
+        self.pushButton_13.setGeometry(QRect(40, 280, 171, 31))
         self.pushButton_ControlDTCSetting_Off = QPushButton(self.tab)
         self.pushButton_ControlDTCSetting_Off.setObjectName(u"pushButton_ControlDTCSetting_Off")
-        self.pushButton_ControlDTCSetting_Off.setGeometry(QRect(220, 390, 41, 31))
+        self.pushButton_ControlDTCSetting_Off.setGeometry(QRect(220, 400, 41, 31))
         self.pushButton_ControlDTCSetting_On = QPushButton(self.tab)
         self.pushButton_ControlDTCSetting_On.setObjectName(u"pushButton_ControlDTCSetting_On")
-        self.pushButton_ControlDTCSetting_On.setGeometry(QRect(220, 360, 41, 31))
+        self.pushButton_ControlDTCSetting_On.setGeometry(QRect(220, 370, 41, 31))
         self.pushButton_ControlDTCSetting = QPushButton(self.tab)
         self.pushButton_ControlDTCSetting.setObjectName(u"pushButton_ControlDTCSetting")
-        self.pushButton_ControlDTCSetting.setGeometry(QRect(40, 320, 171, 31))
+        self.pushButton_ControlDTCSetting.setGeometry(QRect(40, 330, 171, 31))
         self.pushButton_TesterPresent = QPushButton(self.tab)
         self.pushButton_TesterPresent.setObjectName(u"pushButton_TesterPresent")
-        self.pushButton_TesterPresent.setGeometry(QRect(40, 370, 171, 41))
+        self.pushButton_TesterPresent.setGeometry(QRect(40, 380, 171, 41))
         self.pushButton_ControlDTCSetting_On_2 = QPushButton(self.tab)
         self.pushButton_ControlDTCSetting_On_2.setObjectName(u"pushButton_ControlDTCSetting_On_2")
         self.pushButton_ControlDTCSetting_On_2.setGeometry(QRect(650, 70, 231, 31))
@@ -161,13 +179,13 @@ class Ui_Dialog(object):
         self.label_9.setGeometry(QRect(50, 210, 61, 16))
         self.label_10 = QLabel(self.tab)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(50, 360, 53, 15))
+        self.label_10.setGeometry(QRect(50, 370, 53, 15))
         self.label_11 = QLabel(self.tab)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(50, 310, 53, 15))
+        self.label_11.setGeometry(QRect(50, 320, 53, 15))
         self.label_12 = QLabel(self.tab)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(50, 260, 53, 15))
+        self.label_12.setGeometry(QRect(50, 270, 53, 15))
         self.label_14 = QLabel(self.tab)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setGeometry(QRect(500, 60, 53, 15))
@@ -191,13 +209,13 @@ class Ui_Dialog(object):
         self.label_71.setGeometry(QRect(350, 180, 53, 15))
         self.comboBox_CommunicationControl = QComboBox(self.tab)
         self.comboBox_CommunicationControl.setObjectName(u"comboBox_CommunicationControl")
-        self.comboBox_CommunicationControl.setGeometry(QRect(350, 270, 131, 23))
+        self.comboBox_CommunicationControl.setGeometry(QRect(350, 280, 131, 23))
         self.label_13 = QLabel(self.tab)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setGeometry(QRect(220, 260, 111, 16))
+        self.label_13.setGeometry(QRect(220, 270, 111, 16))
         self.label_72 = QLabel(self.tab)
         self.label_72.setObjectName(u"label_72")
-        self.label_72.setGeometry(QRect(220, 280, 111, 16))
+        self.label_72.setGeometry(QRect(220, 290, 111, 16))
         self.comboBox_routine_did = QComboBox(self.tab)
         self.comboBox_routine_did.setObjectName(u"comboBox_routine_did")
         self.comboBox_routine_did.setGeometry(QRect(820, 190, 191, 31))
@@ -209,7 +227,22 @@ class Ui_Dialog(object):
         self.label_15.setGeometry(QRect(230, 210, 61, 16))
         self.pushButton_SecurityAccess_0506 = QPushButton(self.tab)
         self.pushButton_SecurityAccess_0506.setObjectName(u"pushButton_SecurityAccess_0506")
-        self.pushButton_SecurityAccess_0506.setGeometry(QRect(220, 220, 171, 31))
+        self.pushButton_SecurityAccess_0506.setGeometry(QRect(220, 230, 171, 31))
+        self.pushButton_SecurityAccess_6162 = QPushButton(self.tab)
+        self.pushButton_SecurityAccess_6162.setObjectName(u"pushButton_SecurityAccess_6162")
+        self.pushButton_SecurityAccess_6162.setGeometry(QRect(400, 230, 171, 31))
+        self.label_59 = QLabel(self.tab)
+        self.label_59.setObjectName(u"label_59")
+        self.label_59.setGeometry(QRect(410, 210, 61, 16))
+        self.pushButton_1061 = QPushButton(self.tab)
+        self.pushButton_1061.setObjectName(u"pushButton_1061")
+        self.pushButton_1061.setGeometry(QRect(500, 340, 181, 31))
+        self.label_130 = QLabel(self.tab)
+        self.label_130.setObjectName(u"label_130")
+        self.label_130.setGeometry(QRect(660, 270, 61, 16))
+        self.pushButton_SecurityAccess_271112 = QPushButton(self.tab)
+        self.pushButton_SecurityAccess_271112.setObjectName(u"pushButton_SecurityAccess_271112")
+        self.pushButton_SecurityAccess_271112.setGeometry(QRect(650, 290, 171, 31))
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -899,154 +932,154 @@ class Ui_Dialog(object):
 
         self.formLayout.setWidget(5, QFormLayout.FieldRole, self.label_38)
 
-        self.widget = QWidget(self.tab_6)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(30, 250, 187, 213))
-        self.formLayout_5 = QFormLayout(self.widget)
+        self.layoutWidget2 = QWidget(self.tab_6)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(30, 250, 187, 213))
+        self.formLayout_5 = QFormLayout(self.layoutWidget2)
         self.formLayout_5.setObjectName(u"formLayout_5")
         self.formLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_eol_f1ae = QPushButton(self.widget)
+        self.pushButton_eol_f1ae = QPushButton(self.layoutWidget2)
         self.pushButton_eol_f1ae.setObjectName(u"pushButton_eol_f1ae")
 
         self.formLayout_5.setWidget(0, QFormLayout.LabelRole, self.pushButton_eol_f1ae)
 
-        self.label_28 = QLabel(self.widget)
+        self.label_28 = QLabel(self.layoutWidget2)
         self.label_28.setObjectName(u"label_28")
 
         self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.label_28)
 
-        self.pushButton_eol_da10 = QPushButton(self.widget)
+        self.pushButton_eol_da10 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_da10.setObjectName(u"pushButton_eol_da10")
 
         self.formLayout_5.setWidget(1, QFormLayout.LabelRole, self.pushButton_eol_da10)
 
-        self.label_29 = QLabel(self.widget)
+        self.label_29 = QLabel(self.layoutWidget2)
         self.label_29.setObjectName(u"label_29")
 
         self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.label_29)
 
-        self.pushButton_eol_f195 = QPushButton(self.widget)
+        self.pushButton_eol_f195 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_f195.setObjectName(u"pushButton_eol_f195")
 
         self.formLayout_5.setWidget(2, QFormLayout.LabelRole, self.pushButton_eol_f195)
 
-        self.label_23 = QLabel(self.widget)
+        self.label_23 = QLabel(self.layoutWidget2)
         self.label_23.setObjectName(u"label_23")
 
         self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.label_23)
 
-        self.pushButton_eol_fd98 = QPushButton(self.widget)
+        self.pushButton_eol_fd98 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_fd98.setObjectName(u"pushButton_eol_fd98")
 
         self.formLayout_5.setWidget(3, QFormLayout.LabelRole, self.pushButton_eol_fd98)
 
-        self.label_33 = QLabel(self.widget)
+        self.label_33 = QLabel(self.layoutWidget2)
         self.label_33.setObjectName(u"label_33")
 
         self.formLayout_5.setWidget(3, QFormLayout.FieldRole, self.label_33)
 
-        self.pushButton_eol_fd00 = QPushButton(self.widget)
+        self.pushButton_eol_fd00 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_fd00.setObjectName(u"pushButton_eol_fd00")
 
         self.formLayout_5.setWidget(4, QFormLayout.LabelRole, self.pushButton_eol_fd00)
 
-        self.label_30 = QLabel(self.widget)
+        self.label_30 = QLabel(self.layoutWidget2)
         self.label_30.setObjectName(u"label_30")
 
         self.formLayout_5.setWidget(4, QFormLayout.FieldRole, self.label_30)
 
-        self.pushButton_eol_f193 = QPushButton(self.widget)
+        self.pushButton_eol_f193 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_f193.setObjectName(u"pushButton_eol_f193")
 
         self.formLayout_5.setWidget(5, QFormLayout.LabelRole, self.pushButton_eol_f193)
 
-        self.label_31 = QLabel(self.widget)
+        self.label_31 = QLabel(self.layoutWidget2)
         self.label_31.setObjectName(u"label_31")
 
         self.formLayout_5.setWidget(5, QFormLayout.FieldRole, self.label_31)
 
-        self.pushButton_eol_fdf6 = QPushButton(self.widget)
+        self.pushButton_eol_fdf6 = QPushButton(self.layoutWidget2)
         self.pushButton_eol_fdf6.setObjectName(u"pushButton_eol_fdf6")
 
         self.formLayout_5.setWidget(6, QFormLayout.LabelRole, self.pushButton_eol_fdf6)
 
-        self.label_32 = QLabel(self.widget)
+        self.label_32 = QLabel(self.layoutWidget2)
         self.label_32.setObjectName(u"label_32")
 
         self.formLayout_5.setWidget(6, QFormLayout.FieldRole, self.label_32)
 
-        self.widget1 = QWidget(self.tab_6)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(30, 30, 250, 213))
-        self.formLayout_6 = QFormLayout(self.widget1)
+        self.layoutWidget3 = QWidget(self.tab_6)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(30, 30, 250, 213))
+        self.formLayout_6 = QFormLayout(self.layoutWidget3)
         self.formLayout_6.setObjectName(u"formLayout_6")
         self.formLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_eol_f187 = QPushButton(self.widget1)
+        self.pushButton_eol_f187 = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f187.setObjectName(u"pushButton_eol_f187")
 
         self.formLayout_6.setWidget(0, QFormLayout.LabelRole, self.pushButton_eol_f187)
 
-        self.label_18 = QLabel(self.widget1)
+        self.label_18 = QLabel(self.layoutWidget3)
         self.label_18.setObjectName(u"label_18")
 
         self.formLayout_6.setWidget(0, QFormLayout.FieldRole, self.label_18)
 
-        self.pushButton_eol_f189 = QPushButton(self.widget1)
+        self.pushButton_eol_f189 = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f189.setObjectName(u"pushButton_eol_f189")
 
         self.formLayout_6.setWidget(1, QFormLayout.LabelRole, self.pushButton_eol_f189)
 
-        self.label_21 = QLabel(self.widget1)
+        self.label_21 = QLabel(self.layoutWidget3)
         self.label_21.setObjectName(u"label_21")
 
         self.formLayout_6.setWidget(1, QFormLayout.FieldRole, self.label_21)
 
-        self.pushButton_eol_f089 = QPushButton(self.widget1)
+        self.pushButton_eol_f089 = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f089.setObjectName(u"pushButton_eol_f089")
 
         self.formLayout_6.setWidget(2, QFormLayout.LabelRole, self.pushButton_eol_f089)
 
-        self.label_22 = QLabel(self.widget1)
+        self.label_22 = QLabel(self.layoutWidget3)
         self.label_22.setObjectName(u"label_22")
 
         self.formLayout_6.setWidget(2, QFormLayout.FieldRole, self.label_22)
 
-        self.pushButton_eol_f013 = QPushButton(self.widget1)
+        self.pushButton_eol_f013 = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f013.setObjectName(u"pushButton_eol_f013")
 
         self.formLayout_6.setWidget(3, QFormLayout.LabelRole, self.pushButton_eol_f013)
 
-        self.label_24 = QLabel(self.widget1)
+        self.label_24 = QLabel(self.layoutWidget3)
         self.label_24.setObjectName(u"label_24")
 
         self.formLayout_6.setWidget(3, QFormLayout.FieldRole, self.label_24)
 
-        self.pushButton_eol_f18a = QPushButton(self.widget1)
+        self.pushButton_eol_f18a = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f18a.setObjectName(u"pushButton_eol_f18a")
 
         self.formLayout_6.setWidget(4, QFormLayout.LabelRole, self.pushButton_eol_f18a)
 
-        self.label_26 = QLabel(self.widget1)
+        self.label_26 = QLabel(self.layoutWidget3)
         self.label_26.setObjectName(u"label_26")
 
         self.formLayout_6.setWidget(4, QFormLayout.FieldRole, self.label_26)
 
-        self.pushButton_eol_f18b = QPushButton(self.widget1)
+        self.pushButton_eol_f18b = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f18b.setObjectName(u"pushButton_eol_f18b")
 
         self.formLayout_6.setWidget(5, QFormLayout.LabelRole, self.pushButton_eol_f18b)
 
-        self.label_25 = QLabel(self.widget1)
+        self.label_25 = QLabel(self.layoutWidget3)
         self.label_25.setObjectName(u"label_25")
 
         self.formLayout_6.setWidget(5, QFormLayout.FieldRole, self.label_25)
 
-        self.pushButton_eol_f18c = QPushButton(self.widget1)
+        self.pushButton_eol_f18c = QPushButton(self.layoutWidget3)
         self.pushButton_eol_f18c.setObjectName(u"pushButton_eol_f18c")
 
         self.formLayout_6.setWidget(6, QFormLayout.LabelRole, self.pushButton_eol_f18c)
 
-        self.label_27 = QLabel(self.widget1)
+        self.label_27 = QLabel(self.layoutWidget3)
         self.label_27.setObjectName(u"label_27")
 
         self.formLayout_6.setWidget(6, QFormLayout.FieldRole, self.label_27)
@@ -1098,16 +1131,19 @@ class Ui_Dialog(object):
         self.tab_8.setObjectName(u"tab_8")
         self.pushButton_read_f011 = QPushButton(self.tab_8)
         self.pushButton_read_f011.setObjectName(u"pushButton_read_f011")
-        self.pushButton_read_f011.setGeometry(QRect(410, 200, 111, 51))
+        self.pushButton_read_f011.setGeometry(QRect(200, 200, 111, 51))
         self.label_116 = QLabel(self.tab_8)
         self.label_116.setObjectName(u"label_116")
-        self.label_116.setGeometry(QRect(410, 260, 121, 20))
+        self.label_116.setGeometry(QRect(200, 260, 121, 20))
         self.lineEdit_byte = QLineEdit(self.tab_8)
         self.lineEdit_byte.setObjectName(u"lineEdit_byte")
-        self.lineEdit_byte.setGeometry(QRect(520, 250, 31, 31))
+        self.lineEdit_byte.setGeometry(QRect(310, 260, 31, 31))
         self.pushButton_f011_analyze = QPushButton(self.tab_8)
         self.pushButton_f011_analyze.setObjectName(u"pushButton_f011_analyze")
-        self.pushButton_f011_analyze.setGeometry(QRect(560, 240, 71, 41))
+        self.pushButton_f011_analyze.setGeometry(QRect(350, 250, 71, 41))
+        self.pushButton_2ef110 = QPushButton(self.tab_8)
+        self.pushButton_2ef110.setObjectName(u"pushButton_2ef110")
+        self.pushButton_2ef110.setGeometry(QRect(560, 200, 111, 51))
         self.tabWidget.addTab(self.tab_8, "")
         self.textBrowser = QTextBrowser(Dialog)
         self.textBrowser.setObjectName(u"textBrowser")
@@ -1169,6 +1205,25 @@ class Ui_Dialog(object):
         self.label_121.setText(QCoreApplication.translate("Dialog", u"button_name_10", None))
         self.label_122.setText(QCoreApplication.translate("Dialog", u"button_name_11", None))
         self.label_123.setText(QCoreApplication.translate("Dialog", u"button_name_20", None))
+        self.pushButton_free_continue_send.setText(QCoreApplication.translate("Dialog", u"\u81ea\u5b9a\u4e49\u5faa\u73af\u53d1\u9001", None))
+        self.textEdit_invalid_input.setHtml(QCoreApplication.translate("Dialog", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.pushButton_send_invalid.setText(QCoreApplication.translate("Dialog", u"\u5b8c\u5168\u81ea\u7531\u53d1\u9001", None))
+        self.pushButton_udp_send.setText(QCoreApplication.translate("Dialog", u"\u53d1\u9001UDP", None))
+        self.textEdit_udp_input.setHtml(QCoreApplication.translate("Dialog", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), QCoreApplication.translate("Dialog", u"\u81ea\u5b9a\u4e49", None))
         self.pushButton_extendedDiagnosticSession.setText(QCoreApplication.translate("Dialog", u"extendedDiagnosticSession", None))
         self.pushButton_defaultSession.setText(QCoreApplication.translate("Dialog", u"defaultSession", None))
@@ -1203,6 +1258,11 @@ class Ui_Dialog(object):
         self.label_73.setText(QCoreApplication.translate("Dialog", u"31-RoutineControl", None))
         self.label_15.setText(QCoreApplication.translate("Dialog", u"2705/06", None))
         self.pushButton_SecurityAccess_0506.setText(QCoreApplication.translate("Dialog", u"SecurityAccess_0506", None))
+        self.pushButton_SecurityAccess_6162.setText(QCoreApplication.translate("Dialog", u"SecurityAccess_6162", None))
+        self.label_59.setText(QCoreApplication.translate("Dialog", u"2761/62", None))
+        self.pushButton_1061.setText(QCoreApplication.translate("Dialog", u"\u53d1\u90011060", None))
+        self.label_130.setText(QCoreApplication.translate("Dialog", u"2711/12", None))
+        self.pushButton_SecurityAccess_271112.setText(QCoreApplication.translate("Dialog", u"SecurityAccess_1112", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Dialog", u"02.1.ApplicationServices", None))
         self.pushButton_f187.setText(QCoreApplication.translate("Dialog", u"vehicleManufacturerSparePart\n"
 "NumberDataIdentifier", None))
@@ -1439,6 +1499,8 @@ class Ui_Dialog(object):
         self.label_116.setText(QCoreApplication.translate("Dialog", u"\u8f93\u5165Byte\uff1a0~165", None))
         self.lineEdit_byte.setText("")
         self.pushButton_f011_analyze.setText(QCoreApplication.translate("Dialog", u"\u5206\u6790", None))
+        self.pushButton_2ef110.setText(QCoreApplication.translate("Dialog", u"Write F110\n"
+"\u5199\u5165\u6574\u8f66\u914d\u7f6e\u4fe1\u606f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("Dialog", u"03.3.Coding DID", None))
         self.pushButton_clear_log.setText(QCoreApplication.translate("Dialog", u"ClearLog", None))
         self.pushButton_save_log.setText(QCoreApplication.translate("Dialog", u"SaveLog", None))

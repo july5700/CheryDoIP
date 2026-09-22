@@ -16,8 +16,8 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>0</x>
+     <y>0</y>
      <width>1021</width>
      <height>491</height>
     </rect>
@@ -346,6 +346,95 @@
       <string>button_name_20</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_free_continue_send">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>180</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>自定义循环发送</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_xx">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>180</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_invalid_input">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>250</y>
+       <width>441</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_send_invalid">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>280</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>完全自由发送</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_udp_send">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>370</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>发送UDP</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_udp_input">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>340</y>
+       <width>441</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -407,7 +496,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>220</y>
+       <y>230</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -420,7 +509,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>270</y>
+       <y>280</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -433,7 +522,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>390</y>
+       <y>400</y>
        <width>41</width>
        <height>31</height>
       </rect>
@@ -446,7 +535,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>360</y>
+       <y>370</y>
        <width>41</width>
        <height>31</height>
       </rect>
@@ -459,7 +548,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>320</y>
+       <y>330</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -472,7 +561,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>370</y>
+       <y>380</y>
        <width>171</width>
        <height>41</height>
       </rect>
@@ -576,7 +665,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>360</y>
+       <y>370</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -589,7 +678,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>310</y>
+       <y>320</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -602,7 +691,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>260</y>
+       <y>270</y>
        <width>53</width>
        <height>15</height>
       </rect>
@@ -707,7 +796,7 @@ SessionControl</string>
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>270</y>
+       <y>280</y>
        <width>131</width>
        <height>23</height>
       </rect>
@@ -717,7 +806,7 @@ SessionControl</string>
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>260</y>
+       <y>270</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -730,7 +819,7 @@ SessionControl</string>
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>280</y>
+       <y>290</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -779,13 +868,78 @@ SessionControl</string>
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>220</y>
+       <y>230</y>
        <width>171</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>SecurityAccess_0506</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SecurityAccess_6162">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>230</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SecurityAccess_6162</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_59">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>210</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2761/62</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_1061">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>340</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>发送1060</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_130">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>270</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2711/12</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SecurityAccess_271112">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>290</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SecurityAccess_1112</string>
      </property>
     </widget>
    </widget>
@@ -2968,7 +3122,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -3078,7 +3232,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -3370,7 +3524,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_read_f011">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>200</x>
        <y>200</y>
        <width>111</width>
        <height>51</height>
@@ -3384,7 +3538,7 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLabel" name="label_116">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>200</x>
        <y>260</y>
        <width>121</width>
        <height>20</height>
@@ -3397,8 +3551,8 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QLineEdit" name="lineEdit_byte">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>250</y>
+       <x>310</x>
+       <y>260</y>
        <width>31</width>
        <height>31</height>
       </rect>
@@ -3410,14 +3564,28 @@ LogisticSoftwarePartNumberDataIdentifier</string>
     <widget class="QPushButton" name="pushButton_f011_analyze">
      <property name="geometry">
       <rect>
-       <x>560</x>
-       <y>240</y>
+       <x>350</x>
+       <y>250</y>
        <width>71</width>
        <height>41</height>
       </rect>
      </property>
      <property name="text">
       <string>分析</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2ef110">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>200</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Write F110
+写入整车配置信息</string>
      </property>
     </widget>
    </widget>
